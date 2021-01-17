@@ -5,7 +5,7 @@ module Types
     end
 
     def get_image(id:)
-      image = Image.find(id)
+      Image.find(id)
     end
   end
 end
