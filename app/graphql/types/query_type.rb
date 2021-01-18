@@ -4,8 +4,14 @@ module Types
       argument :id, ID, required: true
     end
 
+    field :get_images, [Types::ImageType], null: false, description: 'Returns all images'
+
     def get_image(id:)
       Image.find(id)
+    end
+
+    def get_images
+      Image.all
     end
   end
 end
