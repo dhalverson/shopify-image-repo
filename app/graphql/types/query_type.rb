@@ -19,7 +19,6 @@ module Types
     end
 
     def search_images(description: nil)
-      require 'pry'; binding.pry
       if description
         Image.where("description ILIKE ?", "%#{description}%").limit(10)
       else
@@ -28,3 +27,15 @@ module Types
     end
   end
 end
+
+
+# Search Query
+# query {
+#   searchImages(description: "dog") {
+#     id
+#     url
+#     name
+#     description
+#     category
+#   }
+# }
